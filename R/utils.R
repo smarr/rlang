@@ -41,32 +41,32 @@ has_crayon <- function() {
   is_installed("crayon") && crayon::has_color()
 }
 
-red       <- function(x) if (has_crayon()) crayon::red(x)       else x
-blue      <- function(x) if (has_crayon()) crayon::blue(x)      else x
-green     <- function(x) if (has_crayon()) crayon::green(x)     else x
-yellow    <- function(x) if (has_crayon()) crayon::yellow(x)    else x
-magenta   <- function(x) if (has_crayon()) crayon::magenta(x)   else x
-cyan      <- function(x) if (has_crayon()) crayon::cyan(x)      else x
-blurred   <- function(x) if (has_crayon()) crayon::blurred(x)   else x
-silver    <- function(x) if (has_crayon()) crayon::silver(x)    else x
-bold      <- function(x) if (has_crayon()) crayon::bold(x)      else x
-italic    <- function(x) if (has_crayon()) crayon::italic(x)    else x
-underline <- function(x) if (has_crayon()) crayon::underline(x) else x
+red       <- function(x) x
+blue      <- function(x) x
+green     <- function(x) x
+yellow    <- function(x) x
+magenta   <- function(x) x
+cyan      <- function(x) x
+blurred   <- function(x) x
+silver    <- function(x) x
+bold      <- function(x) x
+italic    <- function(x) x
+underline <- function(x) x
 
-open_red     <- function() if (has_crayon()) open_style("red")
-open_blue    <- function() if (has_crayon()) open_style("blue")
-open_green   <- function() if (has_crayon()) open_style("green")
-open_yellow  <- function() if (has_crayon()) open_style("yellow")
-open_magenta <- function() if (has_crayon()) open_style("magenta")
-open_cyan    <- function() if (has_crayon()) open_style("cyan")
-open_bold    <- function() if (has_crayon()) open_style("bold")
-close_colour <- function() if (has_crayon()) "\u001b[39m"
-close_italic <- function() if (has_crayon()) "\u001b[23m"
-close_bold   <- function() if (has_crayon()) close_style("bold")
+open_red     <- function() if (FALSE) open_style("red")
+open_blue    <- function() if (FALSE) open_style("blue")
+open_green   <- function() if (FALSE) open_style("green")
+open_yellow  <- function() if (FALSE) open_style("yellow")
+open_magenta <- function() if (FALSE) open_style("magenta")
+open_cyan    <- function() if (FALSE) open_style("cyan")
+open_bold    <- function() if (FALSE) open_style("bold")
+close_colour <- function() if (FALSE) "\u001b[39m"
+close_italic <- function() if (FALSE) "\u001b[23m"
+close_bold   <- function() if (FALSE) close_style("bold")
 
-open_yellow_italic   <- function() if (has_crayon()) "\u001b[33m\u001b[3m"
-open_blurred_italic  <- function() if (has_crayon()) "\u001b[2m\u001b[3m"
-close_blurred_italic <- function() if (has_crayon()) "\u001b[23m\u001b[22m"
+open_yellow_italic   <- function() if (FALSE) "\u001b[33m\u001b[3m"
+open_blurred_italic  <- function() if (FALSE) "\u001b[2m\u001b[3m"
+close_blurred_italic <- function() if (FALSE) "\u001b[23m\u001b[22m"
 
 
 open_style <- function(style) {
