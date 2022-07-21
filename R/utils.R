@@ -37,8 +37,15 @@ paste_line <- function(..., .trailing = FALSE) {
   }
 }
 
+has_crayon_cache <- new.env()
+assign("initialized", FALSE, has_crayon_cache)
+
 has_crayon <- function() {
-  is_installed("crayon") && crayon::has_color()
+  if (!get("initialized", envir = has_crayon_cache)) {
+    assign("initialized", TRUE, envir = has_crayon_cache)
+    assign("has_crayon_val", is_installed("crayon") && crayon::has_color(), envir = has_crayon_cache)
+  }
+  get("has_crayon_val", envir = has_crayon_cache)
 }
 
 red       <- function(x) if (has_crayon()) crayon::red(x)       else x
